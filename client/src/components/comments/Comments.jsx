@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import "./comments.scss";
-// import { AuthContext } from "../../context/authContext";
+import { AuthContext } from "../../context/authContext";
 
 const Comments = () => {
-//   const { currentUser } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
   //Temporary
   const comments = [
     {
@@ -26,7 +26,7 @@ const Comments = () => {
   return (
     <div className="comments">
       <div className="write">
-        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+        <img src={currentUser.profilePic} alt="" />
         <input type="text" placeholder="write a comment" />
         <button>Send</button>
       </div>
